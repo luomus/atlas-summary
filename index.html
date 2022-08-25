@@ -81,24 +81,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </style>
 
 
-<script src="atlas_summary_files/libs/clipboard/clipboard.min.js"></script>
-<script src="atlas_summary_files/libs/quarto-html/quarto.js"></script>
-<script src="atlas_summary_files/libs/quarto-html/popper.min.js"></script>
-<script src="atlas_summary_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="atlas_summary_files/libs/quarto-html/anchor.min.js"></script>
-<link href="atlas_summary_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="atlas_summary_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="atlas_summary_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="atlas_summary_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="atlas_summary_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="atlas_summary_files/libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
-<script src="atlas_summary_files/libs/plotly-binding-4.10.0/plotly.js"></script>
-<script src="atlas_summary_files/libs/typedarray-0.1/typedarray.min.js"></script>
-<script src="atlas_summary_files/libs/jquery-3.5.1/jquery.min.js"></script>
-<link href="atlas_summary_files/libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
-<script src="atlas_summary_files/libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
-<link href="atlas_summary_files/libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet">
-<script src="atlas_summary_files/libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/quarto.js"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="index_files/libs/quarto-html/anchor.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="index_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="index_files/libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="index_files/libs/plotly-binding-4.10.0/plotly.js"></script>
+<script src="index_files/libs/typedarray-0.1/typedarray.min.js"></script>
+<script src="index_files/libs/jquery-3.5.1/jquery.min.js"></script>
+<link href="index_files/libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="index_files/libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="index_files/libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="index_files/libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
 
 
 </head>
@@ -126,7 +126,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </header>
 
 <p>Load packages</p>
-<div class="cell" data-hash="atlas_summary_cache/html/pkgs_8e85c4e869ac2c5c9f174dec95797d91">
+<div class="cell" data-hash="index_cache/html/pkgs_8e85c4e869ac2c5c9f174dec95797d91">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(finbif, <span class="at">quietly =</span> <span class="cn">TRUE</span>)</span>
@@ -135,7 +135,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </details>
 </div>
 <p>Set filters for complete lists of birds only.</p>
-<div class="cell" data-hash="atlas_summary_cache/html/filters_8dbe6a8b31e22b0c53ef7928027a9e3a">
+<div class="cell" data-hash="index_cache/html/filters_8dbe6a8b31e22b0c53ef7928027a9e3a">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>filters <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
@@ -148,7 +148,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </details>
 </div>
 <p>Get the number of complete lists per 10km grid cell.</p>
-<div class="cell" data-hash="atlas_summary_cache/html/complete-lists-per-grid-cell_6134d5886d1dd5bce2534493f471c721">
+<div class="cell" data-hash="index_cache/html/complete-lists-per-grid-cell_6134d5886d1dd5bce2534493f471c721">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>complete_lists_per_grid_cell <span class="ot">&lt;-</span> <span class="fu">fb_occurrence</span>(</span>
@@ -161,7 +161,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </details>
 </div>
 <p>Plot the number of complete lists per grid cell.</p>
-<div class="cell" data-hash="atlas_summary_cache/html/fig-complete-lists_6fc7d886b1d179a4103f575f330ee684">
+<div class="cell" data-hash="index_cache/html/fig-complete-lists_6fc7d886b1d179a4103f575f330ee684">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(complete_lists_per_grid_cell) <span class="sc">+</span></span>
@@ -176,14 +176,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output-display">
 <div id="fig-complete-lists" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="atlas_summary_files/figure-html/fig-complete-lists-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="index_files/figure-html/fig-complete-lists-1.png" class="img-fluid figure-img" width="672"></p>
 <p></p><figcaption class="figure-caption">Figure 1: Number of complete lists per 10km grid cell.</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
 <p>Get the observed breeding taxa</p>
-<div class="cell" data-hash="atlas_summary_cache/html/complete-list-taxa_6903b4c52c598eae3e95c93661b78049">
+<div class="cell" data-hash="index_cache/html/complete-list-taxa_6903b4c52c598eae3e95c93661b78049">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>taxa <span class="ot">&lt;-</span> <span class="fu">fb_occurrence</span>(</span>
@@ -198,7 +198,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </details>
 </div>
 <p>Get the number of complete lists per week removing lists that end in a different week than they began in.</p>
-<div class="cell" data-hash="atlas_summary_cache/html/complete-lists-per-week_fe0fd01ed919077a58e062a430316f7c">
+<div class="cell" data-hash="index_cache/html/complete-lists-per-week_fe0fd01ed919077a58e062a430316f7c">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>complete_lists_per_week <span class="ot">&lt;-</span></span>
@@ -218,7 +218,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </details>
 </div>
 <p>Get the weekly reporting rate for each taxa.</p>
-<div class="cell" data-hash="atlas_summary_cache/html/reporting-rates_547a896d054c6bff14fb97a1337e9d2b">
+<div class="cell" data-hash="index_cache/html/reporting-rates_547a896d054c6bff14fb97a1337e9d2b">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>reporting_rates <span class="ot">&lt;-</span></span>
@@ -242,7 +242,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </details>
 </div>
 <p>Plot reporting rate changes over time for Cygnus cygnus.</p>
-<div class="cell" data-hash="atlas_summary_cache/html/fig-reporting-rate_63cfefc3e52d2fba504ee494e34cd743">
+<div class="cell" data-hash="index_cache/html/fig-reporting-rate_63cfefc3e52d2fba504ee494e34cd743">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>reporting_rate_plot <span class="ot">&lt;-</span> </span>
