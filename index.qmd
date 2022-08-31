@@ -8,38 +8,39 @@ execute:
 ---
 
 Load packages
+
 ```{r}
 #| label: pkgs
 library(finbif, quietly = TRUE)
 library(ggplot2, quietly = TRUE)
 library(plotly, quietly = TRUE)
+options(finbif_hide_progress = TRUE)
 ```
 
 Set filters for complete lists of birds only.
+
 ```{r}
 #| label: filters
 filters <- list(
-  complete_list_type = c(
-    "MY.completeListTypeCompleteWithBreedingStatus",
-    "MY.completeListTypeComplete"
-  ),
-  complete_list_taxon_id = "MX.37580"
+  complete_list_type = "all_species",
+  complete_list_taxon_id = taxon_id("birds")
 )
 ```
 
 Get the number of complete lists per 10km grid cell.
+
 ```{r}
 #| label: complete-lists-per-grid-cell
 complete_lists_per_grid_cell <- fb_occurrence(
   filter = filters,
   select = c("lon_10_ykj", "lat_10_ykj", "year"),
   aggregate = "event",
-  n = "all",
-  quiet = TRUE
+  n = "all"
 )
 ```
 
 Plot the number of complete lists per grid cell.
+
 ```{r}
 #| label: fig-complete-lists
 #| fig-height: 8
@@ -55,6 +56,7 @@ ylab("Latitude (YKJ)")
 ```
 
 Get the observed breeding taxa
+
 ```{r}
 #| label: complete-list-taxa
 taxa <- fb_occurrence(
@@ -63,12 +65,12 @@ taxa <- fb_occurrence(
   select = c(Taxa = "birdlife_code"),
   aggregate = "records",
   aggregate_counts = FALSE,
-  n = "all",
-  quiet = TRUE
+  n = "all"
 )
 ```
 
 Get the number of complete lists per week removing lists that end in a different week than they began in.
+
 ```{r}
 #| label: complete-lists-per-week
 complete_lists_per_week <-
@@ -76,8 +78,7 @@ complete_lists_per_week <-
     filter = filters,
     select = c("date_start", "date_end", "year"),
     aggregate = "event",
-    n = "all",
-    quiet = TRUE
+    n = "all"
   ) |>
   transform(
     week = format(as.Date(date_start), "%W"),
@@ -97,8 +98,7 @@ reporting_rates <-
     filter = filters,
     select = c("date_start", "date_end", Taxa = "birdlife_code", "year"),
     aggregate = "records",
-    n = "all",
-    quiet = TRUE
+    n = "all"
   ) |>
   transform(
     week = format(as.Date(date_start), "%W"),
@@ -112,6 +112,7 @@ reporting_rates <-
 ```
 
 Plot reporting rate changes over time for Cygnus cygnus.
+
 ```{r}
 #| label: fig-reporting-rate
 #| fig-cap: "Reporting rate of bird taxa over time"
