@@ -11,6 +11,7 @@ Load packages
 
 ```{r}
 #| label: pkgs
+#| message: false
 library(finbif, quietly = TRUE)
 library(ggplot2, quietly = TRUE)
 library(plotly, quietly = TRUE)
@@ -25,6 +26,33 @@ filters <- list(
   complete_list_type = "all_species",
   complete_list_taxon_id = taxon_id("birds")
 )
+```
+
+Get the number of complete lists submitted over time.
+
+```{r}
+#| label: complete-lists-per-day
+complete_lists_per_day <- fb_occurrence(
+  filter = filters,
+  select = c("year", Day = "ordinal_day_start"),
+  aggregate = "event",
+  n = "all"
+)
+```
+
+Plot the number of complete lists submitted over time in 2022.
+
+```{r}
+#| label: fig-complete-lists-over-time
+#| fig-height: 8
+#| fig-cap: "Number of complete lists submitted over time in 2022"
+complete_lists_per_day |>
+  filter(year == 2022) |>
+  arrange(Day) |>
+  mutate(Lists = cumsum(n_events)) |>
+  ggplot() +
+  aes(x = Day, y = Lists) +
+  geom_line()
 ```
 
 Get the number of complete lists per 10km grid cell.
